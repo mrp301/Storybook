@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Controller, useFormContext } from "react-hook-form";
-import { Input } from "./Input";
+import { Input } from "./Form";
 import { SnsForm } from "./SnsForm";
 
 export const OptionalForms: FC = () => {

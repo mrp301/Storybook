@@ -1,6 +1,6 @@
 import React, { VFC } from "react";
 import { Controller, useFormContext } from "react-hook-form";
-import { Radio } from "./Radio";
+import { Radio } from "./Form";
 
 type Props = {
   formName: string;
