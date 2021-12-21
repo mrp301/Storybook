@@ -1,27 +1,37 @@
-import React, { ComponentProps } from "react";
-import { Meta, Story } from "@storybook/react";
+import React from "react";
+import { ComponentStoryObj, ComponentMeta } from "@storybook/react";
 import { Input } from "./Input";
+import { useForm, Controller } from "react-hook-form";
 
-type Props = ComponentProps<typeof Input>;
+type FormType = {
+  formValue: string | number;
+};
 
 export default {
   component: Input,
-} as Meta;
+  render: (args) => {
+    const { control } = useForm<FormType>();
 
-const Template: Story<Props> = (args) => <Input {...args} />;
+    return (
+      <Controller
+        control={control}
+        name="formValue"
+        render={({ field }) => <Input {...args} {...field} />}
+      />
+    );
+  },
+} as ComponentMeta<typeof Input>;
 
-export const Text = Template.bind({});
-
-Text.args = {
-  type: "text",
-  label: "テキストフォーム",
-  value: "テキスト",
+export const Text: ComponentStoryObj<typeof Input> = {
+  args: {
+    type: "text",
+    label: "テキストフォーム",
+  },
 };
 
-export const Number = Template.bind({});
-
-Number.args = {
-  type: "number",
-  label: "数値フォーム",
-  value: 123,
+export const Number: ComponentStoryObj<typeof Input> = {
+  args: {
+    type: "number",
+    label: "数値フォーム",
+  },
 };

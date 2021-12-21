@@ -1,17 +1,14 @@
-import React, { ComponentProps } from "react";
-import { Meta, Story } from "@storybook/react";
+import React from "react";
+import { ComponentMeta } from "@storybook/react";
 import { Card } from "./Card";
-
-type Props = ComponentProps<typeof Card>;
 
 export default {
   component: Card,
-} as Meta;
+  render: (args) => (
+    <Card {...args}>
+      <p>コンテンツ</p>
+    </Card>
+  ),
+} as ComponentMeta<typeof Card>;
 
-const Template: Story<Props> = (args) => (
-  <Card {...args}>
-    <p>コンテンツ</p>
-  </Card>
-);
-
-export const Default = Template.bind({});
+export const Default = {};

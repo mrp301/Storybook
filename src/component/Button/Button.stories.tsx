@@ -1,35 +1,21 @@
-import React, { ComponentProps } from "react";
-import { Meta, Story } from "@storybook/react";
+import React from "react";
 import { Button } from "./Button";
-
-type Props = ComponentProps<typeof Button>;
+import { ComponentStoryObj, ComponentMeta } from "@storybook/react";
 
 export default {
   component: Button,
-  argTypes: {
-    priority: {
-      control: { type: "inline-radio" },
-      options: ["main", "sub"],
-    },
-  },
-} as Meta;
+  render: (args) => <Button {...args}>ボタン</Button>,
+} as ComponentMeta<typeof Button>;
 
-const Template: Story<Props> = (args) => (
-  <Button {...args}>button</Button>
-);
-
-export const Main = Template.bind({});
-
-Main.argTypes = {
-  priority: {
-    defaultValue: "main",
+export const Main: ComponentStoryObj<typeof Button> = {
+  args: {
+    priority: "main",
   },
 };
 
-export const Sub = Template.bind({});
-
-Sub.argTypes = {
-  priority: {
-    defaultValue: "sub",
+export const Sub: ComponentStoryObj<typeof Button> = {
+  render: (args) => <Button {...args}>renderの上書きも可能</Button>,
+  args: {
+    priority: "sub",
   },
 };

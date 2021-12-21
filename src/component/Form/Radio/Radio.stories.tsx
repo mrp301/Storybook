@@ -1,19 +1,16 @@
-import React, { ComponentProps } from "react";
-import { Meta, Story } from "@storybook/react";
+import React from "react";
+import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
 import { Radio } from "./Radio";
-
-type Props = ComponentProps<typeof Radio>;
 
 export default {
   component: Radio,
-} as Meta;
+  render: (args) => <Radio {...args} />,
+} as ComponentMeta<typeof Radio>;
 
-const Template: Story<Props> = (args) => <Radio {...args} />;
-
-export const Default = Template.bind({});
-
-Default.args = {
-  id: "sample",
-  name: "sample",
-  value: "sample",
+export const Default: ComponentStoryObj<typeof Radio> = {
+  args: {
+    id: "sample",
+    name: "sample",
+    value: "sample",
+  },
 };
