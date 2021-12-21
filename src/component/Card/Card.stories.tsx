@@ -6,7 +6,6 @@ type Props = ComponentProps<typeof Card>;
 
 export default {
   component: Card,
-  title: "Components/Card",
 } as Meta;
 
 const Template: Story<Props> = (args) => (

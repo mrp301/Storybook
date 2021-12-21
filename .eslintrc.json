@@ -17,13 +17,18 @@
       "version": "detect"
     }
   },
-  "plugins": ["react", "@typescript-eslint", "eslint-plugin-prettier"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "eslint-plugin-prettier"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "eslint-config-prettier"
+    "eslint-config-prettier",
+    "plugin:storybook/recommended"
   ],
   "rules": {
     "react/prop-types": "off",

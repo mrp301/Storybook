@@ -6,7 +6,6 @@ type Props = ComponentProps<typeof Button>;
 
 export default {
   component: Button,
-  title: "Components/Button",
   argTypes: {
     priority: {
       control: { type: "inline-radio" },

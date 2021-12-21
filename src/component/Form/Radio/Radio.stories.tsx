@@ -6,7 +6,6 @@ type Props = ComponentProps<typeof Radio>;
 
 export default {
   component: Radio,
-  title: "Components/Radio",
 } as Meta;
 
 const Template: Story<Props> = (args) => <Radio {...args} />;

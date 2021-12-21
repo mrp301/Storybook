@@ -6,7 +6,6 @@ type Props = ComponentProps<typeof Input>;
 
 export default {
   component: Input,
-  title: "Components/Input",
 } as Meta;
 
 const Template: Story<Props> = (args) => <Input {...args} />;
