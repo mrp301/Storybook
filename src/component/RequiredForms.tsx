@@ -1,13 +1,27 @@
 import React, { FC } from "react";
+import { css } from "@emotion/react";
 import { Controller, useFormContext } from "react-hook-form";
 import { Input } from "./Form";
 import { Select } from "./Select";
+
+const styles = {
+  container: css`
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 12px;
+    row-gap: 12px;
+    align-items: center;
+    > li {
+      display: contents;
+    }
+  `,
+};
 
 export const RequiredForms: FC = () => {
   const { control } = useFormContext();
 
   return (
-    <>
+    <ul css={styles.container}>
       <li>
         <Controller
           control={control}
@@ -67,6 +81,6 @@ export const RequiredForms: FC = () => {
           )}
         />
       </li>
-    </>
+    </ul>
   );
 };
