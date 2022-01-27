@@ -1,6 +1,7 @@
 # Storybook を体系定期に学ぶリポジトリ
-
-https://mrp301.github.io/Storybook/
+  
+## 書いた記事
+[Storybookで完結！UIコンポーネントのインタラクション管理](https://qiita.com/dia/items/3b984afec9a51cc803d1)
 
 ## emotion 使えるようにする
 
